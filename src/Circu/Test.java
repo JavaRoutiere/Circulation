@@ -11,5 +11,6 @@ public class Test {
 		g.start();
 		Moniteur m = new Moniteur();
 		m.start();
+		//System.out.println(new Integer(1).toString());
 	}
 }

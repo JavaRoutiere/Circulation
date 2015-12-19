@@ -18,8 +18,6 @@ public class Generateur extends Thread{
 		while(!fini){
 			Vehicule v = new Vehicule();
 			//TODO ?????????
-			//ALL YOUR BASE ARE BELONG TO US     (GK)
-			//PROFIT!!!
 			
 			v.start();
 		}

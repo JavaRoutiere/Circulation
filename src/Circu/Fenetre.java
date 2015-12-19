@@ -14,7 +14,7 @@ public class Fenetre {
 	public Fenetre(String titre){
 		//Création de la fenetre (E)
 		fenetre = new JFrame(titre);
-		fenetre.setBounds(50, 50, 1300, 200); //Coordonnées x,y et dimensions w,h en pixels (GK)
+		fenetre.setBounds(50, 50, 1300, 200); 
 		
 		//Récupération du conteneur de la fenêtre ou on peut mettre les autres elements (E)
 		
