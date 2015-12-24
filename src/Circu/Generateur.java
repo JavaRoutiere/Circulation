@@ -11,7 +11,7 @@ public class Generateur extends Thread{
 	public Generateur(){
 		fini = false;
 		rnd = new Random();
-		maxIntervalle = 1700;
+		maxIntervalle = 0;
 	}
 	
 	public void run(){
