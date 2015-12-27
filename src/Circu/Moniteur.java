@@ -20,18 +20,25 @@ public class Moniteur extends Thread{
 		Vehicule x;
 		String vb = "";
 		for(int i= -Data.R; i <= Data.R; i++){
-			x = Vehicule.VB.get(i);
+			x = Vehicule.VH.get(i);
 			if(x != null){
 				System.out.println((x.no)%10);
-				vb += (x.no)%10;
-			}
-			else{
+			}else{
 				System.out.println("_");
-				vb += "_";
+				}
 			}
-		}
-		
+		System.out.println();
+		for(int i= -Data.R; i <= Data.R; i++){
+			x = Vehicule.VB.get(i);
+			if(x != null){
+				System.out.print((x.no)%10);
+				vb+=(x.no)%10;
+			}else{
+				System.out.println("_");
+				vb+="_";
+				}
 		Moniteur.f.jtf2.setText(vb);
 		System.out.println();
 	}
+  }
 }

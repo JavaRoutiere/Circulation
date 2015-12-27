@@ -11,15 +11,13 @@ public class Generateur extends Thread{
 	public Generateur(){
 		fini = false;
 		rnd = new Random();
-		maxIntervalle = 1700;
+		maxIntervalle = 0;
 	}
 	
 	public void run(){
 		while(!fini){
 			Vehicule v = new Vehicule();
 			//TODO ?????????
-			//ALL YOUR BASE ARE BELONG TO US     (GK)
-			//PROFIT!!!
 			
 			v.start();
 		}
