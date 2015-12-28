@@ -4,10 +4,11 @@ public class Feu extends Thread implements Data{
 	String nom;
 	String couleur;
 	
-	//Initialisation de feu TODO
+	//Initialisation de feu 
 	
 	public Feu(String nom){
 		this.nom = nom;
+		couleur = "vert";
 	}
 	public String getNom() {
 		return nom;
@@ -25,7 +26,7 @@ public class Feu extends Thread implements Data{
 	}
 	void changerCouleur(){
 		if(couleur.equals("vert"))
-			couleur="rouge";
+			couleur= "rouge";
 		else
 			couleur = "vert";
 	}

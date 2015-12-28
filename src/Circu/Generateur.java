@@ -17,7 +17,10 @@ public class Generateur extends Thread{
 	public void run(){
 		while(!fini){
 			Vehicule v = new Vehicule();
+			
+		
 			//TODO ?????????
+			
 			
 			v.start();
 		}

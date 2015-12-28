@@ -15,16 +15,31 @@ public class Vehicule extends Thread implements Data{
 	String nom;
 	boolean voieBasse;
 	
+	
 	public Vehicule(){
 		no = noC++;
 		nom = new Integer(no).toString();
 	}
 	
+	public String toString() {
+		   return "Véhicule " + this.nom +
+			  " : est a la position " + this.pos;
+		}
+	
 	//constructeur pour changer de voie
 	
 	public void changerVoie(){
-		if(pos>-2 && pos<2 && voieBasse &&  f.getCouleur()== "vert" ){
+		if(pos==-2 && voieBasse &&  f.getCouleur()== "vert" ){
 			voieBasse = false;
+			VH.put(pos, this);
+			VB.remove(pos);
+			
+		}else{
+			if(pos ==2 && !voieBasse){
+			voieBasse = true;
+			VB.put(pos,  this);
+			VH.remove(pos);
+			}	
 		}
 	}
 	
@@ -32,16 +47,22 @@ public class Vehicule extends Thread implements Data{
 		while(voieBasse && pos <= Data.R || !voieBasse && pos <= Data.R){
 			if(voieBasse){
 				
-				
 				//TODO: Synchronized
-				synchronized(new Object()){
+				synchronized(VB){
 					if(VB.get(new Integer(pos+1)) == null){
-						if((pos ==-2 && f.getCouleur() == "rouge")||(pos ==2 && f.getCouleur() == "rouge")){
+						if(pos ==-2 && f.getCouleur() == "rouge"){
 							pos = pos+0;
+							VB.put(pos, this);
+							
+							//System.out.println(VB.put(pos, this));
 						}
 						else{
+							
 						//On avance (E)
-						pos = pos+1;
+						changerVoie();
+						pos = pos++;
+						VB.put(pos, this);
+						VB.remove(pos--);
 						}
 					}
 				}
@@ -54,10 +75,21 @@ public class Vehicule extends Thread implements Data{
 			}
 			else{
 				//TODO: Synchronized
-				synchronized(new Object()){
-					if (VH.get(new Integer(pos-1))==null){
+				if(!voieBasse){
+				synchronized(VH){
+					if (VH.get(new Integer(pos-1)) == null){
 						//On avance (E)
-						pos = pos-1;
+						if(pos ==2 && f.getCouleur() == "rouge"){
+							pos = pos+0;
+							VH.put(pos, this);
+							//System.out.println(VB.put(pos, this));
+						}else{
+							//On avance (E)
+							pos = pos--;
+							
+							VH.put(pos, this);
+							VB.remove(pos+1);
+						}
 					}
 				}
 				try{
@@ -69,4 +101,5 @@ public class Vehicule extends Thread implements Data{
 			}
 		}
 	}
+ }
 }
