@@ -1,5 +1,7 @@
 package Circu;
-import java.util.*;
+import java.util.*; 
+
+//test
 
 public class Vehicule extends Thread implements Data{
 	//Permet de différencié les véhicules. C'est les identifiants des véhicules.
@@ -52,17 +54,18 @@ public class Vehicule extends Thread implements Data{
 					if(VB.get(new Integer(pos+1)) == null){
 						if(pos ==-2 && f.getCouleur() == "rouge"){
 							pos = pos+0;
-							VB.put(pos, this);
 							
 							//System.out.println(VB.put(pos, this));
 						}
 						else{
-							
+							if(pos < -2){
 						//On avance (E)
-						changerVoie();
 						pos = pos++;
 						VB.put(pos, this);
 						VB.remove(pos--);
+							}else{
+								changerVoie();
+							}
 						}
 					}
 				}

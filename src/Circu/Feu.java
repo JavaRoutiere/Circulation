@@ -13,6 +13,7 @@ public class Feu extends Thread implements Data{
 	public String getNom() {
 		return nom;
 	}
+	//a faire
 
 	public void setNom(String nom) {
 		this.nom = nom;
