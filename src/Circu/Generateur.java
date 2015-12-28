@@ -14,6 +14,7 @@ public class Generateur extends Thread{
 		fini = false;
 		maxIntervalle = 1700;
 		voieBasse = c;
+		rnd = new Random();
 	}
 	
 	public void run(){
@@ -36,9 +37,6 @@ public class Generateur extends Thread{
 					System.out.println("Impossible de générer un véhicule sur la voie haute");
 				}
 			}
-			
-		
-			//TODO ?????????
 			
 			
 			v.start();
