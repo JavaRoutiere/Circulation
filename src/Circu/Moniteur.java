@@ -17,7 +17,8 @@ public class Moniteur extends Thread{
 	}
 	
 	void affiche(){
-		Vehicule x;
+		Vehicule x = new Vehicule();
+		System.out.println(x);
 		String vb = "";
 		for(int i= -Data.R; i <= Data.R; i++){
 			x = Vehicule.VH.get(i);
