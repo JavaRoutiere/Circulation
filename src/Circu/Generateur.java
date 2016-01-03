@@ -21,7 +21,7 @@ public class Generateur extends Thread{
 		while(!fini){
 			Vehicule v = new Vehicule();
 			if(voieBasse){
-				Vehicule.VH.put(-60, v);
+				Vehicule.VB.put(-60, v);
 				try {
 					sleep((int)(Math.random() * maxIntervalle));
 				} catch (InterruptedException e) {
