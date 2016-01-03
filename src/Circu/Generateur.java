@@ -11,13 +11,22 @@ public class Generateur extends Thread{
 	InetAddress adresse;
 	boolean voieBasse;
 	
+<<<<<<< HEAD
 
+=======
+	
+	public Generateur(){}
+>>>>>>> 550ee20a3971a7c06327a036d02917905c223c82
 	public Generateur(boolean c){
 		fini = false;
 		maxIntervalle = 1700;
 		voieBasse = c;
 		rnd = new Random();
 		maxIntervalle = 1700;
+<<<<<<< HEAD
+=======
+		this.voieBasse = voieBasse;
+>>>>>>> 550ee20a3971a7c06327a036d02917905c223c82
 	}
 	
 	public void run(){
@@ -26,6 +35,14 @@ public class Generateur extends Thread{
 			//TODO ?????????
 			if(!voieBasse){
 				Vehicule.VH.put(60, v);
+<<<<<<< HEAD
+=======
+			
+			else
+				Vehicule.VB.put(-60, v);
+			if(voieBasse){
+				Vehicule.VB.put(-60, v);
+>>>>>>> 550ee20a3971a7c06327a036d02917905c223c82
 				try {
 					sleep((int)(Math.random() * maxIntervalle));
 				} catch (InterruptedException e) {
@@ -43,6 +60,10 @@ public class Generateur extends Thread{
 				}
 			}
 			
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 550ee20a3971a7c06327a036d02917905c223c82
 			v.start();
 			try {
 				int nbre = (int)(Math.random()*maxIntervalle);

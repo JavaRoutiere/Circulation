@@ -4,7 +4,7 @@ import java.util.*;
 //test
 
 public class Vehicule extends Thread implements Data{
-	//Permet de différencier les véhicules. C'est les identifiants des véhicules.
+	//Permet de différencié les véhicules. C'est les identifiants des véhicules.
 	static int noC = 1;
 	//Permet de savoir sur quel voie on é.
 	static Map<Integer, Vehicule> VH,VB = new HashMap<Integer,Vehicule>();
@@ -47,7 +47,12 @@ public class Vehicule extends Thread implements Data{
 	
 	public void run(){
 		while(voieBasse && pos <= Data.R || !voieBasse && pos <= Data.R){
+<<<<<<< HEAD
 			if(voieBasse){		
+=======
+			if(voieBasse){
+				
+>>>>>>> 550ee20a3971a7c06327a036d02917905c223c82
 				//TODO: Synchronized
 				synchronized(VB){
 					if(VB.get(new Integer(pos+1)) == null){
