@@ -47,12 +47,7 @@ public class Vehicule extends Thread implements Data{
 	
 	public void run(){
 		while(voieBasse && pos <= Data.R || !voieBasse && pos <= Data.R){
-<<<<<<< HEAD
-			if(voieBasse){				
-=======
-			if(voieBasse){
-				
->>>>>>> 1816d193cb35aab928f8dd3b0bc2135e061e337c
+			if(voieBasse){		
 				//TODO: Synchronized
 				synchronized(VB){
 					if(VB.get(new Integer(pos+1)) == null){
